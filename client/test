@@ -1,0 +1,18 @@
+	fprintf(stdout, "#####################################################.\n");
+	for (int i = 0; i <= term.row; i++) {
+		for (int k = 0; k <= term.col; k++) {
+			fprintf(stdout, "%c", term.line[i][k]);
+		}
+		fprintf(stdout, "\n");
+	}
+	fprintf(stdout, "\n");
+
+
+    	fprintf(stdout, "#####################################################.\n");
+	for (int i = 0; i < term.row; i++) {
+		for (int k = 0; k < term.col; k++) {
+			fprintf(stdout, "%c", term.line[i][k]);
+		}
+		fprintf(stdout, "\n");
+	}
+		fprintf(stdout, "\n");
