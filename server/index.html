@@ -13,18 +13,20 @@
       #messages li:nth-child(odd) { background: #eee; }
       #messages { margin-bottom: 40px }
     </style>
+      <link rel="stylesheet" href="node_modules/xterm/css/xterm.css" />
+      <script src="node_modules/xterm/lib/xterm.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
   </head>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
-  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <body>
+      <div id="terminal"></div>
+  </body>
   <script>
-    $(function () {
-      var socket = io();
-      socket.on('post', function(msg){
-        // console.log("received!");
-        $('#ttext').text(msg);
-      });
+    var term = new Terminal();
+    term.open(document.getElementById('terminal'));
+    var socket = io();
+    socket.on('post', function(msg){
+      // console.log("received!");
+      term.write(msg);
     });
   </script>
-  <body style="white-space: pre; margin: auto; font-size: 25px;" id="ttext"></body>
 </html>
-

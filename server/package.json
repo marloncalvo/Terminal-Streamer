@@ -9,8 +9,11 @@
   "author": "Marlon Calvo",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
+    "anser": "1.4.9",
+    "ansi-parser": "3.2.9",
+    "express": "4.17.1",
     "socket.io": "^2.3.0",
+    "xterm": "4.1.0",
     "zeromq": "^5.1.0"
   }
 }
